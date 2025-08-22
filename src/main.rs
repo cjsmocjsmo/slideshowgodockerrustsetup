@@ -131,7 +131,7 @@ fn walk_img_dir(conn: &mut Connection, directory: &str) {
 }
 
 fn main() {
-    let db_path = "/home/pi/go/slideshowgodocker/DB/imagesDB";
+    let db_path = "/home/pi/go/slideshowgodocker/DB/imagesDB.test";
     let image_dir = "/home/pi/Pictures/test2/";
 
     // Ensure DB directory exists
