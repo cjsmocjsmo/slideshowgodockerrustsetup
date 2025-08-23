@@ -130,7 +130,10 @@ fn walk_img_dir(conn: &mut Connection, directory: &str) {
     }
 }
 
+use std::time::Instant;
+
 fn main() {
+    let start = Instant::now();
     let db_path = "/home/pi/go/slideshowgodocker/DB/imagesDB.test";
     let image_dir = "/home/pi/Pictures/test2/";
 
@@ -144,4 +147,7 @@ fn main() {
     let mut conn = Connection::open(db_path).expect("Failed to open DB");
     create_img_db_table(&conn).expect("Failed to create table");
     walk_img_dir(&mut conn, image_dir);
+
+    let duration = start.elapsed();
+    println!("\nTotal execution time: {:.2?}", duration);
 }
